@@ -1,0 +1,5 @@
+<% @todo_list.todo_items.each do |ts|%> 
+<%=ts.content%>
+<%= link_to 'Delete',  todo_list_todo_item_path(@todo_list, ts), method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
+ <%end%>

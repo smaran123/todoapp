@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+<div class=panel-body>
+<div class="row">
+
+<div class="col-md-4">
+<div class="table-responsive">
+
+<table class=table>
+<tbody>
+<tr>
+<td><strong>Title:</strong></td>
+<td><%= @todo_list.title.capitalize %></td>
+</tr>
+
+<tr>
+<td><strong>Description:</strong></td>
+<td><%= @todo_list.description.capitalize %></td>
+</tr>
+</tbody>
+</table>
+
+<div id="todo_items_wrapper">
+<%= render @todo_list.todo_items %>
+</div>
+<div id="form">
+<%= render "todo_items/form" %>
+</div>
+
+
+
+
+<%= link_to "New",new_todo_list_path, :class => "btn btn-info"%>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
