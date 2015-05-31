@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: todoapp_development
+
+test:
+  <<: *default
+  database: todoapp_test
+
+production:
+  <<: *default
+  database: todoapp_production
+  username: todoapp
+  password: <%= ENV['TODOAPP_DATABASE_PASSWORD'] %>
