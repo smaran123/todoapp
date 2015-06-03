@@ -1,28 +1,17 @@
-<h1>TodoLists#index</h1>
 
-
-<table class="table table-stripped">
-
-
-<tr>
-
-<th>Title:</th>
-<th>Description:</th>
-<th>Actions:</th>
-</tr>
 <% @todo_lists.each do |td|%>
-<tr>
+<div class="index_row_clearfix">
+<h2 class="todo_list_title">
+<%= link_to td.title, td%>
+</h2>
+<p class="todo_list_sub_title">
+<%= td.description %>
+</p>
+</div>
 
-<td><%= td.title.capitalize %></td>
-<td><%= td.description.capitalize %></td>
-<td> <%= link_to "Show",todo_list_path(td), :class => "btn btn-info"%>
-<%= link_to "Edit",edit_todo_list_path(td), :class => "btn btn-warn"%>
-<%= link_to 'Delete', todo_list_path(td), method: :delete, data: { confirm: "Are you sure?" } %>
-</td>
-
-</tr>
 <%end%>
-</table>
 
-<%= link_to "New",new_todo_list_path, :class => "btn btn-info"%>
 
+<div class="links">
+<%= link_to "New Todo List", new_todo_list_path %>
+</div>
