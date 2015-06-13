@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
- root to: "posts#index"
+#root to: "posts#index"
 
 	resources :todo_lists do
 		resources :todo_items do 
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 			end
 		end
 	end
-	#root "todo_lists#index"
+	root "todo_lists#index"
 
 end
 
