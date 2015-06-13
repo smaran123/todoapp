@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 		end
 	end
 	root "todo_lists#index"
-
+  resources :posts
 end
 
 
